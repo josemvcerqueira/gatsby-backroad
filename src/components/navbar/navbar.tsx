@@ -1,11 +1,57 @@
-import React from "react"
+import React, { FC, useState } from "react"
+import { Link } from "gatsby"
 
-const Navbar = () => {
+import {
+  Navbar,
+  NavCenter,
+  NavHeader,
+  LogoBtn,
+  AlignRight,
+  NavbarList,
+  SocialLinks,
+} from "./navbar.styles"
+import links from "../../constants/links"
+import socialIcons from "../../constants/social-icons"
+import logo from "../../images/logo.svg"
+
+interface Props {}
+
+const NavbarComponent: FC<Props> = () => {
+  const [isOpen, setNav] = useState(false)
+
+  const toggleNav = () => setNav(prevState => !prevState)
+
   return (
-    <div>
-      <h1>I am a navbar</h1>
-    </div>
+    <Navbar>
+      <NavCenter>
+        <NavHeader>
+          <img src={logo} alt="backroads logo" />
+          <LogoBtn type="button" onClick={toggleNav}>
+            <AlignRight />
+          </LogoBtn>
+        </NavHeader>
+        <NavbarList isOpen={isOpen}>
+          {links.map(link => (
+            <li key={link.text}>
+              <Link to={link.path}>{link.text}</Link>
+            </li>
+          ))}
+        </NavbarList>
+        <SocialLinks>
+          {socialIcons.map(icon => (
+            <a
+              key={icon.url}
+              href={icon.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {icon.icon}
+            </a>
+          ))}
+        </SocialLinks>
+      </NavCenter>
+    </Navbar>
   )
 }
 
-export default Navbar
+export default NavbarComponent
