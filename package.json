@@ -13,11 +13,20 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
   },
   "dependencies": {
+    "@types/react-icons": "^3.0.0",
+    "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.15.29",
+    "gatsby-plugin-styled-components": "^3.1.8",
+    "gatsby-plugin-typescript": "^2.1.11",
     "react": "^16.10.2",
-    "react-dom": "^16.10.2"
+    "react-dom": "^16.10.2",
+    "react-icons": "^3.7.0",
+    "styled-components": "^4.4.0"
   },
   "devDependencies": {
+    "@types/react": "^16.9.5",
+    "@types/react-dom": "^16.9.1",
+    "@types/styled-components": "^4.1.19",
     "prettier": "^1.18.2"
   },
   "repository": {
