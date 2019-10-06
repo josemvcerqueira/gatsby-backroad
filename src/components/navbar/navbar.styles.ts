@@ -7,7 +7,7 @@ export const Navbar = styled.div`
   }
 `
 export const NavCenter = styled.div`
-  @media screen and (min-width: 992px) {
+  @media (min-width: 992px) {
     max-width: 1170px;
     margin: 0 auto;
     display: flex;
@@ -23,7 +23,7 @@ export const NavHeader = styled.div`
 `
 
 export const LogoBtn = styled.button`
-  @media screen and (min-width: 992px) {
+  @media (min-width: 992px) {
     display: none;
   }
   background: transparent;
@@ -38,7 +38,7 @@ export const AlignRight = styled(FaAlignRight)`
   font-size: 1.5rem;
 `
 export const NavbarList = styled.ul<{ isOpen: boolean }>`
-    @media screen and (min-width: 992px) {
+    @media (min-width: 992px) {
     height: auto;
     display: flex;
      a {
@@ -46,12 +46,11 @@ export const NavbarList = styled.ul<{ isOpen: boolean }>`
     margin: 0 0.5rem;
     font-size: 1.2rem;
     transition: ${props => props.theme.mainTransition};
-  }
-  a:hover {
+    :hover {
     color: ${props => props.theme.mainBlack} ;
     transform: translateY(-5px);
   }
-    
+  }
     }
     
   list-style-type: none;
@@ -68,17 +67,16 @@ export const NavbarList = styled.ul<{ isOpen: boolean }>`
     transition: ${props => props.theme.mainTransition};
     font-weight: bold;
     letter-spacing: ${props => props.theme.mainSpacing};
-    }
-
-    a:hover {
+    :hover {
       color: ${props => props.theme.primaryColor};
+    }
     }
   }
 `
 
 export const SocialLinks = styled.div`
   display: none;
-  @media screen and (min-width: 992px) {
+  @media (min-width: 992px) {
     display: flex;
     line-height: 0;
     a {
@@ -86,10 +84,10 @@ export const SocialLinks = styled.div`
       margin: 0 0.5rem;
       font-size: 1.2rem;
       transition: ${props => props.theme.mainTransition};
-    }
-    a:hover {
-      color: ${props => props.theme.mainBlack};
-      transform: translateY(-5px);
+      :hover {
+        color: ${props => props.theme.mainBlack};
+        transform: translateY(-5px);
+      }
     }
   }
 `

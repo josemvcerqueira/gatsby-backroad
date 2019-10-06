@@ -1,7 +1,9 @@
 import React from "react"
 
-import { Layout } from "../components"
+import { Layout, Error } from "../components"
 
-const Blog = () => <Layout>Hello from error page</Layout>
-
-export default Blog
+export default () => (
+  <Layout>
+    <Error />
+  </Layout>
+)

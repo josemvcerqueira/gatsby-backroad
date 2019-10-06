@@ -10,6 +10,7 @@ import {
   NavbarList,
   SocialLinks,
 } from "./navbar.styles"
+
 import links from "../../constants/links"
 import socialIcons from "../../constants/social-icons"
 import logo from "../../images/logo.svg"

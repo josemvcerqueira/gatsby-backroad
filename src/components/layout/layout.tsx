@@ -13,11 +13,11 @@ interface Props {
 const Layout: FC<Props> = ({ children }) => (
   <ThemeProvider theme={theme}>
     <>
-      <div>
+      <main>
         <Navbar />
         {children}
         <Footer />
-      </div>
+      </main>
       <GlobalStyle />
     </>
   </ThemeProvider>

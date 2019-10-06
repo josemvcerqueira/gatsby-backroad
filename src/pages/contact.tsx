@@ -2,6 +2,4 @@ import React from "react"
 
 import { Layout } from "../components"
 
-const Blog = () => <Layout>Hello from contact</Layout>
-
-export default Blog
+export default () => <Layout>Hello from contact</Layout>

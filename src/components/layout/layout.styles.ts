@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components"
+import img from "../../images/defaultBcg.jpeg"
 
 export const theme = {
   primaryColor: "#3fd0d4",
@@ -47,7 +48,7 @@ a {
 .defaultHero {
   min-height: calc(100vh - 62px);
   background: linear-gradient(rgba(63, 208, 212, 0.7), rgba(0, 0, 0, 0.7)),
-    url("../../images/defaultBcg.jpeg") center/cover no-repeat;
+    url(${img}) center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,12 +66,12 @@ a {
 }
 .btn-white:hover {
   background: ${props => props.theme.mainWhite};
-  color: var(--primaryColor);
+  color: ${props => props.theme.primaryColor};
 }
 .btn-primary {
   background: ${props => props.theme.primaryColor};
   color: ${props => props.theme.mainWhite};
-  border: 2px solid ${props => props.theme.mainWhite};
+  border: 2px solid ${props => props.theme.primaryColor};
 }
 .btn-primary:hover {
   background: transparent;

@@ -1,1 +1,6 @@
 export { default as Layout } from "./layout/layout"
+export { default as SimpleHero } from "./simple-hero/simple-hero"
+export { default as Banner } from "./banner/banner"
+export { default as Error } from "./error/error"
+export { default as About } from "./home/about/about"
+export { default as Services } from "./home/services/services"
