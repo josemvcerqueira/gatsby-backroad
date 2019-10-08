@@ -1,10 +1,29 @@
-import React from "react"
-import { Link } from "gatsby"
+import React, { FC } from "react"
+import { graphql } from "gatsby"
 
-import { Layout } from "../components"
+import { Layout, Hero } from "../components"
+import { GenericObj } from "../constants/interfaces"
 
-export default () => (
+interface Props {
+  data: GenericObj
+}
+
+const Blog: FC<Props> = ({ data }) => (
   <Layout>
-    Hello from blog <Link to="/">home page</Link>
+    <Hero img={data.blogBcg.childImageSharp.fluid} />
   </Layout>
 )
+
+export default Blog
+
+export const query = graphql`
+  query {
+    blogBcg: file(relativePath: { eq: "blogBcg.jpeg" }) {
+      childImageSharp {
+        fluid(maxWidth: 600) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`

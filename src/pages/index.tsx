@@ -1,11 +1,16 @@
-import React from "react"
-import { Link } from "gatsby"
+import React, { FC } from "react"
+import { Link, graphql } from "gatsby"
 
-import { Layout, SimpleHero, Banner, About, Services } from "../components"
+import { Layout, Hero, Banner, About, Services } from "../components"
+import { GenericObj } from "../constants/interfaces"
 
-export default () => (
+interface Props {
+  data: GenericObj
+}
+
+const Home: FC<Props> = ({ data }) => (
   <Layout>
-    <SimpleHero>
+    <Hero home img={data.defaultBcg.childImageSharp.fluid}>
       <Banner
         title="continue exploring"
         info="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, nemo?"
@@ -14,8 +19,22 @@ export default () => (
           explore tours
         </Link>
       </Banner>
-    </SimpleHero>
+    </Hero>
     <About />
     <Services />
   </Layout>
 )
+
+export default Home
+
+export const query = graphql`
+  query {
+    defaultBcg: file(relativePath: { eq: "defaultBcg.jpeg" }) {
+      childImageSharp {
+        fluid(maxWidth: 600) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`
