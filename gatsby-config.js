@@ -13,12 +13,6 @@ module.exports = {
     },
   },
   plugins: [
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    "gatsby-plugin-typescript",
-    `gatsby-plugin-styled-components`,
-    `gatsby-plugin-transition-link`,
-    `gatsby-plugin-playground`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -26,6 +20,12 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       },
     },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    "gatsby-plugin-typescript",
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-transition-link`,
+    `gatsby-plugin-playground`,
     {
       resolve: `gatsby-source-contentful`,
       options: {

@@ -5,7 +5,7 @@ import GatsbyImage from "gatsby-image"
 import { FaMap } from "react-icons/fa"
 
 import { Tour as ITour } from "../../constants/interfaces"
-import { TourArticle } from "./tour.styles"
+import { TourArticle } from "./tours.styles"
 
 interface Props {
   tour: ITour

@@ -23,7 +23,19 @@ export interface Tour {
   slug?: string
   country?: string
   days?: string
-  images?: Array<Image>
+  images: Array<Image>
+  start?: string
+  description: Description
+  journey: Array<Journey>
+}
+
+interface Description {
+  description: string
+}
+
+interface Journey {
+  day: string
+  info: string
 }
 
 interface Image {
