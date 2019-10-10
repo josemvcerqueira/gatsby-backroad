@@ -10,7 +10,7 @@ interface Props {
 
 const ToursScreen: FC<Props> = ({ data }) => (
   <Layout>
-    <Hero img={data.defaultBcg.childImageSharp.fluid} />
+    <Hero img={(((data || {}).defaultBcg || {}).childImageSharp || {}).fluid} />
     <Tours />
   </Layout>
 )

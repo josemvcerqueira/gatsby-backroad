@@ -10,7 +10,7 @@ interface Props {
 
 const Blog: FC<Props> = ({ data }) => (
   <Layout>
-    <Hero img={data.blogBcg.childImageSharp.fluid} />
+    <Hero img={(((data || {}).blogBcg || {}).childImageSharp || {}).fluid} />
   </Layout>
 )
 

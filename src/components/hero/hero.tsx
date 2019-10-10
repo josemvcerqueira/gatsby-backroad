@@ -1,4 +1,5 @@
 import React, { FC, ReactNode } from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import styled from "styled-components"
 
@@ -11,13 +12,30 @@ interface Props {
   img: IFluidObject
 }
 
-const Hero: FC<Props> = ({ img, className, home = false, children }) => (
-  // @ts-ignore
-  <BackgroundImage className={className} fluid={img} home={home}>
-    {children && children}
-  </BackgroundImage>
-)
+export const getDefaultBgImage = graphql`
+  query {
+    defaultBcg: file(relativePath: { eq: "defaultBcg.jpeg" }) {
+      childImageSharp {
+        fluid(quality: 90, maxWidth: 4160) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`
 
+const Hero: FC<Props> = ({ img, className, home = false, children }) => {
+  const response = useStaticQuery(getDefaultBgImage)
+  let backgroundImage =
+    img || (((response || {}).defaultBcg || {}).childImageSharp || {}).fluid
+
+  return (
+    // @ts-ignore
+    <BackgroundImage className={className} fluid={backgroundImage} home={home}>
+      {children && children}
+    </BackgroundImage>
+  )
+}
 export default styled(Hero)`
   min-height: ${props => (props.home ? "calc(100vh - 62px)" : "50vh")};
   background: ${props =>

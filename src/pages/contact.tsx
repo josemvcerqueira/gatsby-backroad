@@ -10,7 +10,7 @@ interface Props {
 
 const ContactScreen: FC<Props> = ({ data }) => (
   <Layout>
-    <Hero img={data.connectBcg.childImageSharp.fluid} />
+    <Hero img={(((data || {}).connectBcg || {}).childImageSharp || {}).fluid} />
     <Contact />
   </Layout>
 )

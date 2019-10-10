@@ -18,7 +18,10 @@ interface Props {
 
 const Home: FC<Props> = ({ data }) => (
   <Layout>
-    <Hero home img={data.defaultBcg.childImageSharp.fluid}>
+    <Hero
+      home
+      img={(((data || {}).defaultBcg || {}).childImageSharp || {}).fluid}
+    >
       <Banner
         title="continue exploring"
         info="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, nemo?"
@@ -40,7 +43,7 @@ export const query = graphql`
   query {
     defaultBcg: file(relativePath: { eq: "defaultBcg.jpeg" }) {
       childImageSharp {
-        fluid(maxWidth: 600) {
+        fluid(quality: 90, maxWidth: 4160) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
