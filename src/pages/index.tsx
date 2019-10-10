@@ -2,7 +2,14 @@ import React, { FC } from "react"
 import { graphql } from "gatsby"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
-import { Layout, Hero, Banner, About, Services } from "../components"
+import {
+  Layout,
+  Hero,
+  Banner,
+  About,
+  Services,
+  FeaturedTours,
+} from "../components"
 import { GenericObj } from "../constants/interfaces"
 
 interface Props {
@@ -23,6 +30,7 @@ const Home: FC<Props> = ({ data }) => (
     </Hero>
     <About />
     <Services />
+    <FeaturedTours />
   </Layout>
 )
 
