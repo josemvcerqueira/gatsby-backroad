@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react"
-import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 import {
   Navbar,
@@ -34,7 +34,9 @@ const NavbarComponent: FC<Props> = () => {
         <NavbarList isOpen={isOpen}>
           {links.map(link => (
             <li key={link.text}>
-              <Link to={link.path}>{link.text}</Link>
+              <AniLink fade to={link.path}>
+                {link.text}
+              </AniLink>
             </li>
           ))}
         </NavbarList>

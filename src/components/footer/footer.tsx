@@ -1,5 +1,5 @@
 import React, { FC } from "react"
-import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 import { Links, FooterContainer, Icons, Copyright } from "./footer.styles"
 import links from "../../constants/links"
@@ -12,9 +12,9 @@ const Footer: FC<Props> = () => {
     <FooterContainer>
       <Links>
         {links.map(link => (
-          <Link key={link.path} to={link.path}>
+          <AniLink fade key={link.path} to={link.path}>
             {link.text}
-          </Link>
+          </AniLink>
         ))}
       </Links>
       <Icons>

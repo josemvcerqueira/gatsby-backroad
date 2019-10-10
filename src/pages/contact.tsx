@@ -1,20 +1,21 @@
 import React, { FC } from "react"
 import { graphql } from "gatsby"
 
-import { Layout, Hero } from "../components"
+import { Layout, Hero, Contact } from "../components"
 import { GenericObj } from "../constants/interfaces"
 
 interface Props {
   data: GenericObj
 }
 
-const Contact: FC<Props> = ({ data }) => (
+const ContactScreen: FC<Props> = ({ data }) => (
   <Layout>
     <Hero img={data.connectBcg.childImageSharp.fluid} />
+    <Contact />
   </Layout>
 )
 
-export default Contact
+export default ContactScreen
 
 export const query = graphql`
   query {

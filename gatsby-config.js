@@ -13,6 +13,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     "gatsby-plugin-typescript",
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-transition-link`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

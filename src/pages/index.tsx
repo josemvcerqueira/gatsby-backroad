@@ -1,5 +1,6 @@
 import React, { FC } from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 import { Layout, Hero, Banner, About, Services } from "../components"
 import { GenericObj } from "../constants/interfaces"
@@ -15,9 +16,9 @@ const Home: FC<Props> = ({ data }) => (
         title="continue exploring"
         info="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, nemo?"
       >
-        <Link className="btn-white" to="/tours">
+        <AniLink fade className="btn-white" to="/tours">
           explore tours
-        </Link>
+        </AniLink>
       </Banner>
     </Hero>
     <About />
