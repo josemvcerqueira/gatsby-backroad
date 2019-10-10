@@ -1,20 +1,21 @@
 import React, { FC } from "react"
 import { graphql } from "gatsby"
 
-import { Layout, Hero } from "../components"
+import { Layout, Hero, Tours } from "../components"
 import { GenericObj } from "../constants/interfaces"
 
 interface Props {
   data: GenericObj
 }
 
-const Tours: FC<Props> = ({ data }) => (
+const ToursScreen: FC<Props> = ({ data }) => (
   <Layout>
     <Hero img={data.defaultBcg.childImageSharp.fluid} />
+    <Tours />
   </Layout>
 )
 
-export default Tours
+export default ToursScreen
 
 export const query = graphql`
   query {

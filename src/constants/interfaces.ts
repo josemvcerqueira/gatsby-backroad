@@ -29,3 +29,7 @@ export interface Tour {
 interface Image {
   fluid: FluidObject
 }
+
+export interface Node {
+  node: Tour
+}

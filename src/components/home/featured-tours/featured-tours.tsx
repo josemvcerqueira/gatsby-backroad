@@ -5,7 +5,7 @@ import AniLink from "gatsby-plugin-transition-link/AniLink"
 import Title from "../../title/title"
 import Tour from "../../tours/tour"
 import { ToursSection } from "../../styles"
-import { Tour as ITour } from "../../../constants/interfaces"
+import { Node } from "../../../constants/interfaces"
 
 interface Props {}
 
@@ -50,10 +50,6 @@ const FeaturedTours: FC<Props> = () => {
       </AniLink>
     </ToursSection>
   )
-}
-
-interface Node {
-  node: ITour
 }
 
 export default FeaturedTours
