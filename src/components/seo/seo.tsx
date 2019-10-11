@@ -27,7 +27,6 @@ const SEO: FC<Props> = ({ title, description }) => {
   const {
     siteTitle,
     siteDesc,
-    author,
     siteUrl,
     image,
     twitterUsername,
@@ -37,6 +36,15 @@ const SEO: FC<Props> = ({ title, description }) => {
     <Helmet htmlAttributes={{ lang: "en" }} title={`${title} | ${siteTitle}`}>
       <meta name="description" content={description || siteDesc} />
       <meta name="image" content={image} />
+      {/*twitter card*/}
+      <meta property="og:url" content={siteUrl} />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={siteTitle} />
+      <meta property="og:description" content={siteDesc} />
+      <meta property="og:image" content={`${siteUrl}${image}`} />
+      <meta property="og:image:width" content="400" />
+      <meta property="og:image:height" content="300" />
+      {/*twitter card*/}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content={twitterUsername} />
       <meta name="twitter:title" content={siteTitle} />
