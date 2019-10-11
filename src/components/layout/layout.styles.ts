@@ -38,6 +38,7 @@ h6 {
   font-family: "Poppins", sans-serif;
   margin-bottom: 1.25rem;
   letter-spacing: ${props => props.theme.mainSpacing};
+  text-transform: capitalize;
 }
 p {
   margin-bottom: 1.25rem;

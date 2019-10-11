@@ -45,3 +45,16 @@ interface Image {
 export interface Node {
   node: Tour
 }
+
+export interface Post {
+  published: string
+  title: string
+  contentful_id: string
+  image: Image
+  slug: string
+  text: RichText
+}
+
+interface RichText {
+  json: string
+}
