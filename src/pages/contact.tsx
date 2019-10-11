@@ -1,7 +1,7 @@
 import React, { FC } from "react"
 import { graphql } from "gatsby"
 
-import { Layout, Hero, Contact } from "../components"
+import { Layout, Hero, Contact, SEO } from "../components"
 import { GenericObj } from "../constants/interfaces"
 
 interface Props {
@@ -10,6 +10,7 @@ interface Props {
 
 const ContactScreen: FC<Props> = ({ data }) => (
   <Layout>
+    <SEO title="Contact" />
     <Hero img={(((data || {}).connectBcg || {}).childImageSharp || {}).fluid} />
     <Contact />
   </Layout>

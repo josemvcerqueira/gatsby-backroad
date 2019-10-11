@@ -1,7 +1,7 @@
 import React, { FC } from "react"
 import { graphql } from "gatsby"
 
-import { Layout, Hero, BlogList } from "../components"
+import { Layout, Hero, BlogList, SEO } from "../components"
 import { GenericObj } from "../constants/interfaces"
 
 interface Props {
@@ -10,6 +10,7 @@ interface Props {
 
 const Blog: FC<Props> = ({ data }) => (
   <Layout>
+    <SEO title="Blog" />
     <Hero img={(((data || {}).blogBcg || {}).childImageSharp || {}).fluid} />
     <BlogList />
   </Layout>

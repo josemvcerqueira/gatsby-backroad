@@ -1,7 +1,7 @@
 import React, { FC } from "react"
 import { graphql } from "gatsby"
 
-import { Layout, Hero, Tours } from "../components"
+import { Layout, Hero, Tours, SEO } from "../components"
 import { GenericObj } from "../constants/interfaces"
 
 interface Props {
@@ -10,6 +10,7 @@ interface Props {
 
 const ToursScreen: FC<Props> = ({ data }) => (
   <Layout>
+    <SEO title="Tours" />
     <Hero img={(((data || {}).defaultBcg || {}).childImageSharp || {}).fluid} />
     <Tours />
   </Layout>

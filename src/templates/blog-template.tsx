@@ -4,7 +4,7 @@ import styled from "styled-components"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
-import { Layout } from "../components"
+import { Layout, SEO } from "../components"
 import { GenericObj, Post } from "../constants/interfaces"
 
 const BlogSection = styled.section`
@@ -114,6 +114,7 @@ const BlogScreen: FC<Props> = ({
 
   return (
     <Layout>
+      <SEO title={title} />
       <BlogSection>
         <div className="center">
           <h1>{title}</h1>

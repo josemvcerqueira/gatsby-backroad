@@ -5,7 +5,7 @@ import { FaMoneyBillWave, FaMap } from "react-icons/fa"
 import styled from "styled-components"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
-import { Layout, Hero, Day } from "../components"
+import { Layout, Hero, Day, SEO } from "../components"
 import { Tour } from "../constants/interfaces"
 
 interface Data {
@@ -98,6 +98,7 @@ const Template: FC<Props> = ({
 }) => {
   return (
     <Layout>
+      <SEO title={name || "Tour"} />
       <Hero img={mainImage.fluid} />
       <TemplateSection>
         <div className="center">
