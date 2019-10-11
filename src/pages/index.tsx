@@ -9,6 +9,7 @@ import {
   About,
   Services,
   FeaturedTours,
+  SEO,
 } from "../components"
 import { GenericObj } from "../constants/interfaces"
 
@@ -18,6 +19,7 @@ interface Props {
 
 const Home: FC<Props> = ({ data }) => (
   <Layout>
+    <SEO title="Home" description="this is description" />
     <Hero
       home
       img={(((data || {}).defaultBcg || {}).childImageSharp || {}).fluid}
