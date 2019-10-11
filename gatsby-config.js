@@ -8,9 +8,9 @@ module.exports = {
     description:
       "Explore awesome worldwide tours & discover what makes each of them unique. Forget your daily routine & say yes to adventure",
     author: "@josecerqueira",
-    data: {
-      age: 27,
-    },
+    twitterUsername: "@josemvcerqueira",
+    image: "/defaultBcg.jpeg",
+    siteUrl: "https://gatsby-backdoor-tours-jmvc.netlify.com",
   },
   plugins: [
     {
@@ -20,6 +20,7 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       },
     },
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     "gatsby-plugin-typescript",

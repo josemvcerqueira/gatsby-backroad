@@ -55,7 +55,7 @@ export const NavbarList = styled.ul<{ isOpen: boolean }>`
     
   list-style-type: none;
   transition: ${props => props.theme.mainTransition};
-  height: ${props => (props.isOpen ? "216px" : 0)};
+  height: ${props => (props.isOpen ? "280px" : 0)};
   overflow: hidden;
   
   a {
